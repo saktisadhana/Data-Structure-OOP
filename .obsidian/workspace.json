@@ -11,10 +11,14 @@
             "id": "6a8311a6b2bc960e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Assignment 2/PlatformCTF/README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Assignment 2/PlatformCTF/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Assignment 2/PlatformCTF/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from README"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Assignment 2/PlatformCTF/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of README"
             }
           }
         ]
@@ -178,9 +185,10 @@
   },
   "active": "6a8311a6b2bc960e",
   "lastOpenFiles": [
-    "Assignment 2/PlatformCTF/src/App.java",
-    "Assignment 2/PlatformCTF/src/Admin.class",
-    "Assignment 2/README.md.md",
+    "Assignment 2/Assets/Class Diagram_Assignment-2.svg",
+    "Assignment 2/PlatformCTF/README.md",
+    "README.md",
+    "Assignment 2/Assets",
     "Assignment 2/PlatformCTF/src/Submission.class",
     "Assignment 2/PlatformCTF/src/ForensicChallenge.class",
     "Assignment 2/PlatformCTF/src/RevEngChallenge.class",
@@ -190,10 +198,9 @@
     "Assignment 2/PlatformCTF/src/OsintChallenge.class",
     "Assignment 2/PlatformCTF/src/WebExChallenge.class",
     "Assignment 2/PlatformCTF/src/Connection.class",
-    "Assignment 2/Assets/Class Diagram_Assignment-2.svg",
-    "Assignment 2/Assets/Diagram_Assignment2.svg",
-    "Assignment 2/PlatformCTF/README.md",
     "Assignment 1/README.md",
+    "Assignment 2/README.md.md",
+    "Assignment 2/Assets/Diagram_Assignment2.svg",
     "Assignment 2/Assets/Diagram.svg"
   ]
 }
