@@ -1,9 +1,10 @@
 # Report Assignment 2
 ## Identity
 
-> Putu Putra Sakti Sadhana
-> 5027251101
-> Class A
+| Nama                     | NRP        | Class |
+| ------------------------ | ---------- | ------------ |
+| Putu Putra Sakti Sadhana | 5027251101 | Class A         |
+
 ## Reporting
 
 ### Case Description
@@ -12,7 +13,7 @@ I was tasked to find a case or a problem around me that can be solved using the 
 
 ### Class Diagram
 
-![[Class Diagram_Assignment-2.svg]]
+![Class Diagram_Assignment-2](ADiagram_Assignment-2.svg)
 
 Based on the instruction given, the diagram above was made using `Mermaid.AI` which i must admit is a pretty powerful AI that is capable of making any diagram based on the prompt that is given!
 
