@@ -12,7 +12,7 @@ public class App {
         List<Player> playerList = new ArrayList<>();
         Leaderboard mainLeaderboard = new Leaderboard("test", 24);
         
-        // Let's create an Admin and a Player so you don't have to manually register them every time you test!
+        // hard coded cuz running out of time ;-;
         Admin testAdmin = new Admin("000", "admin", "admin@test.com", 0);
         Player testPlayer = new Player("001", "player", "player@test.com");
         playerList.add(testPlayer);
