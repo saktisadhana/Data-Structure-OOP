@@ -87,7 +87,6 @@ public:
     {
         cout << "Skill is Used B-bb-b-Baka! >_<" << endl;
     }
-virtual ~Karakter();
 };
 // inheritance
 class Warrior : public Karakter 
@@ -152,7 +151,7 @@ void useSkill() override
 };
 
 // array of pointer
-Karakter* daftarKarakter[12];
+Karakter* daftarKarakter[MAX];
 int jumlahKarakter = 0;
 
 // CRUD Karakter

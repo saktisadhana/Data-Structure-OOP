@@ -1,0 +1,222 @@
+#include <iostream> 
+#include <string>
+using namespace std;
+
+class Pemain 
+{
+protected:
+    string nama;
+    int koin,exp,tt;
+public:
+//constructor
+    Pemain(string n, int k, int e, int Tt)
+    {
+        nama = n;
+        koin = k;
+        exp = e;
+        tt = Tt;
+    }
+//setter getter
+    //setter getter "Nama"
+void setNama (string n)
+{
+    nama = n;
+}
+string getNama ()
+{
+    return nama;
+}
+    //setter getter "Koin"
+void setKoin (int k)
+{
+    koin = k;
+}
+int getKoin ()
+{
+    return koin;
+}
+    //setter getter "Exp"
+void setExp (int e)
+{
+    exp = e;
+}
+int getExp ()
+{
+    return exp;
+}
+    //setter getter "Tt"
+void setTt (int Tt)
+{
+    tt = Tt;
+}
+int getTt ()
+{
+    return tt;
+}
+virtual void hunt(int baseKoin, int baseExp);
+virtual void info();
+virtual ~Pemain();
+};
+
+class PemainSolo : public Pemain
+{
+public:
+//constructor
+PemainSolo (string n, int k, int e, int Tt) : Pemain (n, k, e, Tt) {}
+//Override
+void hunt(int baseKoin, int baseExp) override
+{
+    koin = baseKoin;
+    exp = baseExp * (1+tt);  
+}
+void info()
+{
+    cout << "[SOLO]" << " | " << nama << " | Koin: " << koin << " | EXP: " << exp << " | TT: " << tt;
+}
+};
+
+class PemainParty : public Pemain 
+{
+private:
+int partySize;
+
+public:
+//constructor
+PemainParty (string n, int k, int e, int Tt, int partySize) : Pemain (n, k, e, Tt) 
+{
+this->partySize = partySize;
+}
+//setter getter
+    //setter getter "partySize"
+void setpartySize (int p)
+{
+    partySize = p;
+}
+int getExp ()
+{
+    return partySize;
+}
+//Override
+void hunt(int baseKoin, int baseExp) override
+{
+    koin = baseKoin / partySize;
+    exp = baseExp * (1+tt);  
+}
+void info()
+{
+    cout << "[PARTY]" << " | " << nama << " | Koin: " << koin << " | EXP: " << exp << " | TT: " << tt << " | Size: " << partySize;
+}
+
+int cari (int jumlahPemain) //sudah i think?
+{
+bool ketemu = false;
+    for (int i = 0; i < jumlahPemain; i++)
+    {
+        if (guild[i]->getNama() == nama)
+        {
+            ketemu = true;
+            return i;
+            break;
+        }
+        
+    }
+    if (!ketemu)
+    {
+        cout << "Karakter tidak ditemukan!\n";
+        return 0;
+    }
+    
+}
+
+void updateKarakter (string nama, int tt, int jumlahPemain, int tipe)
+{
+if (cari(jumlahPemain) != 0)
+{
+    if (tipe == 1)
+    {
+        guild[cari(jumlahPemain)]-> setNama() = nama; // setNama harusnya setNama(nama);
+    }
+}
+
+}
+void deleteKarakter (string nama, int jumlahPemain)
+{
+
+}
+void huntKarakter (string nama, int exp, int koin, int jumlahPemain)
+{
+
+}
+
+Pemain* guild[100];
+int jumlahPemain = 0;
+int main ()
+{
+    int input;
+    string nama;
+    int koin,exp,tt; int partySize;
+    while (input > 5) // ini juga salah harusnya do ... while (input!=0)
+    {
+    cout << "Main Menu\n";
+    cout << "1. Buat Karakter\n";
+    cout << "2. List Karakter\n";
+    cout << "3. Update Karakter\n";
+    cout << "4. Delete Karakter\n";
+    cout << "5. Pergi Berburu!\n";
+    cout << "0. Exit\n";
+    cout << "> Input:"; cin >> input;
+    }
+    int tipe; string deleteNama; string berburuNama;
+    switch (input)
+    {
+    case 0:
+
+    case 1: //done? 
+        cout << "Pilihan: 1\n";
+        cout << "Tipe (1=Solo, 2=Party):"; cin >> tipe;
+        cout << "Nama: "; cin >> nama;
+        cout << "TT: "; cin >> tt;
+        if (tipe == 2)
+        {
+        cout << "Party size: "; cin >> partySize;
+        }
+        if (tipe == 1)
+        {
+            guild[jumlahPemain] = PemainSolo(nama, koin, exp, tt); // kurang new
+            // array hanya menerima alamat memori
+            jumlahPemain++;
+        } else if (tipe == 2)
+        {
+            guild[jumlahPemain] = PemainParty(nama, koin, exp, tt, partySize); //kurang
+            jumlahPemain++;
+        }
+        cout << nama << " berhasil ditambahkan!\n";
+        break;
+    case 2:
+        break;
+    case 3: // belum fitur search dan ganti
+        cout << "Pilihan: 3\n";
+        cout << "Nama: " << nama <<endl;
+        cout << "[1] Ganti Nama [2] Ganti TT\n";
+        cout << "Pilihan: "; cin >> tipe;
+        updateKarakter (nama, tt, jumlahPemain, tipe);
+    case 4: // belum fitur search dan delete
+        cout << "Pilihan: 4\n";
+        cout << "Nama: "; cin >> deleteNama;
+        cout << deleteNama << " berhasil dihapus!\n";
+        break;
+    case 5: // belum fitur berburu
+        cout << "Pilihan: 5\n";
+        cout << "Siapa yang akan berburu?\n";
+        cout << "Nama: "; cin >> berburuNama;
+        cout << "Input Koin & Base EXP!!!\n";
+        cout << "Koin: "; cin >> koin;
+        cout << "EXP: "; cin >> exp;
+        cout << berburuNama << " pergi berburu!\n";
+    default:
+    cout << "Invalid Option!\n";
+        break;
+    }
+    return 0;
+}
+};

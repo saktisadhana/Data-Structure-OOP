@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "c21e93ddbd7e4f9e",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a2f2b2b6f8fe29e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6a8311a6b2bc960e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Assignment 2/README.md.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README.md"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4889bbd3db03e04a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6bac49a0201733d9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b9df2488e9453a13",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "907d059fe56c143e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "40316dc4c7289734",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8be3d8837cf99ea6",
+    "type": "split",
+    "children": [
+      {
+        "id": "6d84fbe46f30e89a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e8fdbf7d7443dd8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Assignment 2/README.md.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README.md"
+            }
+          },
+          {
+            "id": "b4716b2f46aa6878",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Assignment 2/README.md.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README.md"
+            }
+          },
+          {
+            "id": "95d056f6ab1fd71f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "fa18b0175298b664",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f30d38dde2fcad2b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Assignment 2/README.md.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README.md"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "b9df2488e9453a13",
+  "lastOpenFiles": [
+    "Assignment 2/Assets/Class Diagram_Assignment-2.svg",
+    "Assignment 2/README.md.md",
+    "Assignment 2/Assets/Diagram_Assignment2.svg",
+    "Assignment 2/PlatformCTF/README.md",
+    "Assignment 2/PlatformCTF/bin/App.class",
+    "Assignment 2/PlatformCTF/bin",
+    "Assignment 2/PlatformCTF/src/App.java",
+    "Assignment 2/PlatformCTF/src",
+    "Assignment 2/PlatformCTF/lib",
+    "Assignment 2/PlatformCTF",
+    "Assignment 1/README.md",
+    "Assignment 2/Assets",
+    "Assignment 2/Assets/Diagram.svg",
+    "Assignment 2",
+    "Modul 1 - OOP/Soal Latihan Modul 1/Untitled"
+  ]
+}

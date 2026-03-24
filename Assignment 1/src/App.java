@@ -11,6 +11,7 @@ public class App {
     System.out.println("=======================\n>>");
     Scanner input = new Scanner(System.in);
     String inputUser = input.nextLine(); 
+    Car myCar = null;
     switch (inputUser)
     {
         case "1":
@@ -24,7 +25,7 @@ public class App {
             speed = input.nextInt();
             System.out.println("Enter car mileage:");
             mileage = input.nextInt();
-            Car myCar = new Car(brand, type, color, speed, mileage);
+            myCar = new GasCar(brand, type, color, speed, mileage);
             System.out.println("Car created successfully!");
             break;
         case "2":   
@@ -43,13 +44,14 @@ public class App {
     }
     }
 }
-class Car // class declaration
+abstract class Car // class declaration
 {
 private String brand;
 private String type;    
 private String color;
 private int speed;
 private int mileage;
+protected CashPayment cashPayment = new CashPayment();
 //constructor
 public Car(String brand, String type, String color, int speed, int mileage)
 {
@@ -60,10 +62,7 @@ public Car(String brand, String type, String color, int speed, int mileage)
     this.mileage = mileage;
 }
 //method
-public void startEngine()   
-{
-    System.out.println ("Engine started");
-}                                   
+abstract void startEngine();                            
 //getter setterr speed
 public int getSpeed()
 {
@@ -83,24 +82,56 @@ public void setMileage(int mileageNew)
     this.mileage = mileageNew;
 }
 //getter setter brand
-public String getBrand() {
+public String getBrand() 
+{
     return brand;
 }
-public void setBrand(String brand) {
+public void setBrand(String brand) 
+{
     this.brand = brand;
 }
 //getter setter type
-public String getType() {
+public String getType() 
+{
     return type;
 }
-public void setType(String type) {
+public void setType(String type) 
+{
     this.type = type;
 }
 // getter setter color
-public String getColor() {
+public String getColor() 
+{
     return color;
 }
-public void setColor(String color) {
+public void setColor(String color) 
+{
     this.color = color;
 }
+
+}
+class GasCar extends Car 
+{
+    public GasCar (String brand, String type, String color, int speed, int mileage)
+    {
+        super (brand,type,color,speed,mileage);
+    }
+    @Override
+    public void startEngine ()
+    {
+        System.out.println("I love gas");
+    }
+}
+interface TollPayment 
+{
+    void payToll (int number);
+}
+
+class CashPayment implements TollPayment 
+{
+    @Override
+    public void payToll (int number)
+    {
+        System.out.println("Pembayaran Cash" + number);
+    }
 }
