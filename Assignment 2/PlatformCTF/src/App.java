@@ -207,7 +207,7 @@ public class App {
                     }
                 }
             } 
-            // ================== PLAYER PANEL ==================
+
             else if (loginChoice == 2) { 
                 boolean inPlayerPanel = true;
                 Player activePlayer = testPlayer; 
@@ -232,10 +232,8 @@ public class App {
                             if (challengeList.isEmpty()) {
                                 System.out.println("> No challenges available yet.");
                             } else {
-                                // this is to print the chal index!! 
-                                for (int i = 0; i < challengeList.size(); i++) {
-                                    Challenge c = challengeList.get(i);
-                                    System.out.println("> [" + i + "] " + c.getTitle() + " (" + c.getMaxPoints() + " points)");
+                                for (Challenge c : challengeList) {
+                                    System.out.println("> [" + c.getChallengeId() + "] " + c.getTitle() + " (" + c.getMaxPoints() + " points)");
                                 }
                             }
                             System.out.println("==========================================================");
@@ -250,11 +248,18 @@ public class App {
                             }
                             
                             System.out.println("==========================================================");
-                            System.out.print("> Enter the Index number of the challenge!: ");
-                            int challIndex = scanner.nextInt();
-                            scanner.nextLine();
-                            if (challIndex >= 0 && challIndex < challengeList.size()) {
-                                Challenge selectedChall = challengeList.get(challIndex);
+                            System.out.print("> Enter the Challenge ID: ");
+                            String targetId = scanner.nextLine();
+                            
+                            Challenge selectedChall = null;
+                            for (Challenge c : challengeList) {
+                                if (c.getChallengeId().equalsIgnoreCase(targetId)) {
+                                    selectedChall = c;
+                                    break;
+                                }
+                            }
+                            
+                            if (selectedChall != null) {
                                 System.out.print("> Enter your Flag answer for '" + selectedChall.getTitle() + "': ");
                                 String submittedFlag = scanner.nextLine();
                                 Submission sub = new Submission("S-" + System.currentTimeMillis(), submittedFlag, activePlayer, null, selectedChall);
@@ -265,7 +270,7 @@ public class App {
                                     System.out.println("> WRONG FLAG!");
                                 }
                             } else {
-                                System.out.println("> Invalid challenge index.");
+                                System.out.println("> Invalid challenge ID.");
                             }
                             System.out.println("==========================================================");
                             break;

@@ -1,9 +1,9 @@
 # Report Assignment 2
 ## Identity
 
-> Putu Putra Sakti Sadhana
-> 5027251101
-> Class A
+| Nama                     | NRP        | Class   |
+| ------------------------ | ---------- | ------- |
+| Putu Putra Sakti Sadhana | 5027251101 | Class A |
 ## Reporting
 
 ### Case Description
@@ -18,8 +18,8 @@ Based on the instruction given, the diagram above was made using `Mermaid.AI` wh
 
 ### Java Code
 
-For this section I'll split up the code into multiple section (Mainly into its own respective classes)
-
+For this section I'll split up the code into multiple section (Mainly into their own respective classes)
+I've also changed the code structure, in order for it to be readable in the report! But don't worry besides that i haven't changed anything! (The logic, variable name, class name, etc!!)
 #### App
 
 ```java
@@ -36,15 +36,48 @@ public class App {
         List<Challenge> challengeList = new ArrayList<>();
         List<Player> playerList = new ArrayList<>();
         Leaderboard mainLeaderboard = new Leaderboard("test", 24);
-        
+
         // hard coded cuz running out of time ;-;
         Admin testAdmin = new Admin("000", "admin", "admin@test.com", 0);
         Player testPlayer = new Player("001", "player", "player@test.com");
         playerList.add(testPlayer);
         mainLeaderboard.addPlayerToLeaderboard(testPlayer);
         boolean isAppRunning = true;
-        System.out.println("==========================================================");
-        System.out.println("                                                           \r\n" + //
+```
+
+At this section of the code i invoke many of the variables that are needed for the programs menu. As you can see there's:
+
+```java
+List<Challenge> challengeList = new ArrayList<>();
+```
+
+Which is needed for the admin and user to be able to find the all of the CTF challenges.
+The same can be applied to the other list 
+
+```java
+List<Player> playerList = new ArrayList<>();
+```
+
+Where this time this is needed so that all of the registered players shows up!
+But because im running out of time...
+
+```java
+Admin testAdmin = new Admin("000", "admin", "admin@test.com", 0);
+Player testPlayer = new Player("001", "player", "player@test.com");
+```
+
+I've added some hardcoded user to choose from, which is Admin & Player. These two users have their own completely unique menu panels, which i'll explain below!!! But before that 
+
+```java
+playerList.add(testPlayer);
+mainLeaderboard.addPlayerToLeaderboard(testPlayer);
+```
+
+I added the `testPlayer` to the player list and leaderboard! Now onto the main menu:
+
+```java
+System.out.println("==========================================================");
+System.out.println("                                                           \r\n" + //
                         " @@@@@@@  @@@@@@@@  @@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@   \r\n" + //
                         "@@@@@@@@  @@@@@@@@  @@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  \r\n" + //
                         "!@@       @@!         @@!    @@!       @@!       @@!  @@@  \r\n" + //
@@ -56,275 +89,503 @@ public class App {
                         " ::: :::   :: ::::     ::     :: ::::   :: ::::   ::       \r\n" + //
                         " :: :: :  : :: ::      :     : :: ::   : :: ::    :        \r\n" + //
                         "                                                           ");
-        while (isAppRunning) {
-            System.out.println("==========================================================");
-            System.out.println("> Welcome to CeTeEp, test your skillzz here...");
-            System.out.println("> Before that plz login :3");
-            System.out.println("> [1] : Login as Admin (" + testAdmin.getUsername() + ")");
-            System.out.println("> [2] : Login as Player (" + testPlayer.getUsername() + ")");
-            System.out.println("> [3] : EXIT");
-            System.out.print("> ");
-            
-            int loginChoice = scanner.nextInt();
-            scanner.nextLine(); // Clear the "Enter" key leftover in the scanner buffer
-            
-            if (loginChoice == 3) {
-                isAppRunning = false;
-                System.out.println("> Exiting...");
-                break;
-            }
-
-            if (loginChoice == 1) { 
-                boolean inAdminPanel = true;
-                while (inAdminPanel) {
-                    System.out.println("==========================================================");
-                    System.out.println("> [1] Create a new challenge");
-                    System.out.println("> [2] View all players");
-                    System.out.println("> [3] View Leaderboard");
-                    System.out.println("> [0] Back");
-                    System.out.println("==========================================================");
-                    System.out.print("> ");
-                    
-                    int adminChoice = scanner.nextInt();
-                    scanner.nextLine();
-                    
-                    switch (adminChoice) {
-                        case 1:
-                            boolean addingChallenges = true;
-                            while (addingChallenges) {
-                                System.out.println("==========================================================");
-                                System.out.println("Select Challenge Type:");
-                                System.out.println("> [1] Webex");
-                                System.out.println("> [2] OSINT");
-                                System.out.println("> [3] Misc");
-                                System.out.println("> [4] Crypto");
-                                System.out.println("> [5] Pwn");
-                                System.out.println("> [6] Reveng");
-                                System.out.println("> [7] Forens");
-                                System.out.println("==========================================================");
-                                System.out.print("> "); int typeChoice = scanner.nextInt(); scanner.nextLine();
-                                
-                                while (typeChoice < 1 || typeChoice > 7) {
-                                    System.out.println("Invalid type entered. Please pick from 1-7.");
-                                    System.out.print("> ");
-                                    typeChoice = scanner.nextInt(); scanner.nextLine();
-                                }
-
-                                System.out.print("> Enter title: ");
-                                String title = scanner.nextLine();
-                                System.out.print("> Enter the Description: ");
-                                String desc = scanner.nextLine();
-                                System.out.print("> Enter Flag: ");
-                                String flag = scanner.nextLine();
-                                String challId = "C" + (challengeList.size() + 1); // challenge id
-                                Attachment webTest = new WebsiteLinkAttachment("test.com"); // dummy domain
-                                Challenge newChall = null;
-
-                                switch (typeChoice) {
-                                    case 1:
-                                        System.out.println("==========================================================");
-                                        System.out.print("> Enter Vulnerability Type (e.g. XSS, SQLi): ");
-                                        String vuln = scanner.nextLine();
-                                        newChall = new WebExChallenge(challId, title, desc, 500, flag, webTest, vuln);
-                                        System.out.println("==========================================================");
-                                        break;
-                                    case 2:
-                                        System.out.println("==========================================================");
-                                        System.out.print("> Enter Target Subject: ");
-                                        String subject = scanner.nextLine();
-                                        System.out.print("> Enter Starting Asset: ");
-                                        String asset = scanner.nextLine();
-                                        newChall = new OsintChallenge(challId, title, desc, 500, flag, webTest, subject, asset);
-                                        System.out.println("==========================================================");
-                                        break;
-                                    case 3:
-                                        System.out.println("==========================================================");
-                                        System.out.print("> Enter Attachment File Name: ");
-                                        String file = scanner.nextLine();
-                                        newChall = new MiscChallenge(challId, title, desc, 500, flag, webTest, file);
-                                        System.out.println("==========================================================");
-                                        break;
-                                    case 4:
-                                        System.out.println("==========================================================");
-                                        System.out.print("> Enter Ciphertext: ");
-                                        String cipher = scanner.nextLine();
-                                        System.out.print("> Enter Host Address: ");
-                                        String cryptoHost = scanner.nextLine();
-                                        System.out.print("> Enter Port Number: ");
-                                        int cryptoPort = scanner.nextInt();
-                                        scanner.nextLine();
-                                        newChall = new CryptoChallenge(challId, title, desc, 500, flag, webTest, cipher, cryptoHost, cryptoPort);
-                                        System.out.println("==========================================================");
-                                        break;
-                                    case 5:
-                                        System.out.println("==========================================================");
-                                        System.out.print("> Enter LibC Version: ");
-                                        String libc = scanner.nextLine();
-                                        System.out.print("> Enter Host Address: ");
-                                        String pwnHost = scanner.nextLine();
-                                        System.out.print("> Enter Port Number: ");
-                                        int pwnPort = scanner.nextInt();
-                                        scanner.nextLine();
-                                        newChall = new PwnChallenge(challId, title, desc, 500, flag, webTest, libc, pwnHost, pwnPort);
-                                        System.out.println("==========================================================");
-                                        break;
-                                    case 6:
-                                        System.out.println("==========================================================");
-                                        System.out.print("> Enter Target Architecture: ");
-                                        String arch = scanner.nextLine();
-                                        newChall = new RevEngChallenge(challId, title, desc, 500, flag, webTest, arch);
-                                        System.out.println("==========================================================");
-                                        break;
-                                    case 7:
-                                        System.out.println("==========================================================");
-                                        System.out.print("> Enter Target MD5 Hash: ");
-                                        String md5 = scanner.nextLine();
-                                        newChall = new ForensicChallenge(challId, title, desc, 500, flag, webTest, md5);
-                                        System.out.println("==========================================================");
-                                        break;
-                                    default:
-                                        System.out.println("==========================================================");
-                                        System.out.println(" > Invalid type entered");
-                                        System.out.println("==========================================================");
-                                        break;
-                                }
-                                
-                                if (newChall != null) {
-                                    testAdmin.createChallenge(newChall);
-                                    challengeList.add(newChall);
-                                    System.out.println("> Challenge Added Successfully! ID: " + challId);
-                                }
-
-                                System.out.print("> Add another challenge? (y/n): ");
-                                String response = scanner.nextLine();
-                                if (!response.equalsIgnoreCase("y")) {
-                                    addingChallenges = false;
-                                }
-                            }
-                            break;
-                            
-                        case 2:
-                            System.out.println("==========================================================");
-                            System.out.println("> Player list:");
-                            for (Player p : playerList) {
-                                System.out.println("> Username: " + p.getUsername() + " | Points: " + p.getTotalPoints());
-                            }
-                            System.out.println("==========================================================");
-                            break;
-                            
-                        case 3:
-                            System.out.println("==========================================================");
-                            System.out.println("> CTF LEADERBOARD");
-                            mainLeaderboard.sortPlayerLeaderboard(); // sort the leaderboard :3
-                            for (Player p : playerList) { 
-                                System.out.println("> " + p.getUsername() + " : " + p.getTotalPoints() + " pts");
-                            }
-                            System.out.println("==========================================================");
-                            break;
-                            
-                        case 0:
-                            System.out.println("> Logging out...");
-                            inAdminPanel = false;
-                            break;
-                            
-                        default:
-                            System.out.println("> Invalid option.");
-                    }
-                }
-            } 
-            // ================== PLAYER PANEL ==================
-            else if (loginChoice == 2) { 
-                boolean inPlayerPanel = true;
-                Player activePlayer = testPlayer; 
-                
-                while (inPlayerPanel) {
-                    System.out.println("==========================================================");
-                    System.out.println(" > Welcome " + activePlayer.getUsername() + " !");
-                    System.out.println("> [1] View active challenges");
-                    System.out.println("> [2] Submit a flag to a challenge");
-                    System.out.println("> [3] View my profile and points");
-                    System.out.println("> [0] Back");
-                    System.out.println("==========================================================");
-                    System.out.print("> ");
-                    
-                    int playerChoice = scanner.nextInt();
-                    scanner.nextLine();
-                    
-                    switch (playerChoice) {
-                        case 1:
-                            System.out.println("==========================================================");
-                            System.out.println("> Active Challenges");
-                            if (challengeList.isEmpty()) {
-                                System.out.println("> No challenges available yet.");
-                            } else {
-                                // this is to print the chal index!! 
-                                for (int i = 0; i < challengeList.size(); i++) {
-                                    Challenge c = challengeList.get(i);
-                                    System.out.println("> [" + i + "] " + c.getTitle() + " (" + c.getMaxPoints() + " points)");
-                                }
-                            }
-                            System.out.println("==========================================================");
-                            break;
-                            
-                        case 2:
-                            if (challengeList.isEmpty()) {
-                                System.out.println("==========================================================");
-                                System.out.println("> No challenges!");
-                                System.out.println("==========================================================");
-                                break;
-                            }
-                            
-                            System.out.println("==========================================================");
-                            System.out.print("> Enter the Index number of the challenge!: ");
-                            int challIndex = scanner.nextInt();
-                            scanner.nextLine();
-                            if (challIndex >= 0 && challIndex < challengeList.size()) {
-                                Challenge selectedChall = challengeList.get(challIndex);
-                                System.out.print("> Enter your Flag answer for '" + selectedChall.getTitle() + "': ");
-                                String submittedFlag = scanner.nextLine();
-                                Submission sub = new Submission("S-" + System.currentTimeMillis(), submittedFlag, activePlayer, null, selectedChall);
-                                
-                                if (sub.isCorrect()) {
-                                    System.out.println("> CORRECT! You earned " + selectedChall.calculatePoints() + " points.");
-                                } else {
-                                    System.out.println("> WRONG FLAG!");
-                                }
-                            } else {
-                                System.out.println("> Invalid challenge index.");
-                            }
-                            System.out.println("==========================================================");
-                            break;
-                            
-                        case 3:
-                            System.out.println("==========================================================");
-                            System.out.println("> My Profile");
-                            System.out.println("> Username: " + activePlayer.getUsername());
-                            System.out.println("> Email: " + activePlayer.getEmail());
-                            System.out.println("> Total Points: " + activePlayer.getTotalPoints());
-                            System.out.println("==========================================================");
-                            break;
-                            
-                        case 0:
-                            System.out.println("> Logging out...");
-                            inPlayerPanel = false;
-                            break;
-                            
-                        default:
-                            System.out.println("> Invalid option.");
-                    }
-                }
-            } else {
-                System.out.println("Invalid option. Please type 1, 2, or 3.");
-            }
+    while (isAppRunning) {
+        System.out.println("==========================================================");
+        System.out.println("> Welcome to CeTeEp, test your skillzz here...");
+        System.out.println("> Before that plz login :3");
+        System.out.println("> [1] : Login as Admin (" + testAdmin.getUsername() + ")");
+        System.out.println("> [2] : Login as Player (" + testPlayer.getUsername() + ")");
+        System.out.println("> [3] : EXIT");
+        System.out.print("> ");
+        int loginChoice = scanner.nextInt();
+        scanner.nextLine(); // Clear the "Enter" key leftover in the scanner buffer
+        if (loginChoice == 3) {
+            isAppRunning = false;
+            System.out.println("> Exiting...");
+            break;
         }
-        
-        scanner.close();
-    }
-    
+```
+
+So the snippet of code above will be the first thing that'll be shown!! And again for simplicity the program for now can only log on into two existing account. 
+
+```java
+System.out.println("> [1] : Login as Admin (" + testAdmin.getUsername() + ")");
+System.out.println("> [2] : Login as Player (" + testPlayer.getUsername() + ")");
+```
+
+In a real CTF platform, of course people will be able to create their own account.
+To keep the menu looping, i choose to do a combination of while, if statements, and some switch cases. If i were to map the how the menu works in this program the diagram will roughly be like this :
+
+```
+Main Menu < --- While Loop
+=   > Admin Panel < --- If Statements
+	=   > Create a new Challenge < --- Switch Cases
+		< Challenge Category is encapsulated by a While Loop!!
+		=   > Webex < --- Switch Cases
+			=   > Inputting Challenge Details
+		=   > OSINT < --- Switch Cases
+			=   > Inputting Challenge Details
+		=   > Misc < --- Switch Cases
+			=   > Inputting Challenge Details
+		=   > Crypto < --- Switch Cases
+			=   > Inputting Challenge Details
+		=   > Pwn < --- Switch Cases
+			=   > Inputting Challenge Details
+		=   > Reveng < --- Switch Cases
+			=   > Inputting Challenge Details
+		=   > Forens < --- Switch Cases
+			=   > Inputting Challenge Details
+	=   > View all players < --- Switch Cases
+	=   > View Leaderboard < --- Switch Cases
+	=   < Back
+=   > Player Panel < --- If Statements
+	=   > View active challenges < --- Switch Cases
+    =   > Submit a flag to a challenge < --- Switch Cases
+    =   > View my profile and points < --- Switch Cases
+    =   < Back
+=   < Back
+```
+
+Now all of that is clear now onto the next section which is a snippet of code for the creation of challenges:
+
+```java
+if (loginChoice == 1) { 
+    boolean inAdminPanel = true;
+    while (inAdminPanel) {
+        System.out.println("==========================================================");
+        System.out.println("> [1] Create a new challenge");
+        System.out.println("> [2] View all players");
+        System.out.println("> [3] View Leaderboard");
+        System.out.println("> [0] Back");
+        System.out.println("==========================================================");
+        System.out.print("> ");
+        int adminChoice = scanner.nextInt();
+        scanner.nextLine();
+```
+
+For the section where you can choose the category of the newly created challenge. I chose to have a switch case, as for the variable to check what the input is, i choose to name the input as `addingChallenges`
+
+```java
+switch (adminChoice) {
+    case 1:
+        boolean addingChallenges = true;
+        while (addingChallenges) {
+            System.out.println("==========================================================");
+            System.out.println("Select Challenge Type:");
+            System.out.println("> [1] Webex");
+            System.out.println("> [2] OSINT");
+            System.out.println("> [3] Misc");
+            System.out.println("> [4] Crypto");
+            System.out.println("> [5] Pwn");
+            System.out.println("> [6] Reveng");
+            System.out.println("> [7] Forens");
+            System.out.println("==========================================================");
+            System.out.print("> "); int typeChoice = scanner.nextInt(); scanner.nextLine();
+```
+
+Here i choose to make 7 separate category for all of the challenges, this is following the diagrams that i got!! And of course also based on the diagram the parent class for all of this challenge category is  called `Challenge`
+
+
+```java
+while (typeChoice < 1 || typeChoice > 7) {
+    System.out.println("Invalid type entered. Please pick from 1-7.");
+    System.out.print("> ");
+    typeChoice = scanner.nextInt(); scanner.nextLine();
 }
 ```
 
+The snippets of code above is use to prevent the input that is not 1 thru 7! It'll loop this code over and over again! 
+
+```java
+System.out.print("> Enter title: ");
+String title = scanner.nextLine();
+System.out.print("> Enter the Description: ");
+String desc = scanner.nextLine();
+System.out.print("> Enter Flag: ");
+String flag = scanner.nextLine();
+String challId = "C" + (challengeList.size() + 1); // challenge id
+Attachment webTest = new WebsiteLinkAttachment("test.com"); // dummy domain
+Challenge newChall = null;
+```
+
+So the logic of making a challenge in the program, you first need to specify:
+
+```java
+System.out.print("> Enter title: ");
+String title = scanner.nextLine();
+```
+
+The title of the challenge, the input is then saved to a String variable named `title`. Then the same is done to other field such as:
+
+```java
+System.out.print("> Enter the Description: ");
+String desc = scanner.nextLine();
+```
+
+The description!!
+
+```java
+System.out.print("> Enter Flag: ");
+String flag = scanner.nextLine();
+```
+
+And of course the most important field, the flag of the level! After that
+
+```java
+String challId = "C" + (challengeList.size() + 1); // challenge id
+```
+
+We set the challenge ID like this!
+
+| Identifier | Index + 1 |
+| ---------- | --------- |
+| C          | 1         |
+
+I also did a couple of stuff in the code:
+
+```java
+Attachment webTest = new WebsiteLinkAttachment("test.com"); // dummy domain
+Challenge newChall = null;
+```
+
+In here i choose to invoke a variable named webTest that is the type of `Attachment`, this is needed for any  because all challenges needs it's own attachment, for now i am setting that every challenge has the webTest attachment. I also invoke a new variable named `newChall` of the type `Challenge`, then i set the value of the variable as null!
+
+```java
+switch (typeChoice) {
+    case 1:
+        System.out.println("==========================================================");
+        System.out.print("> Enter Vulnerability Type (e.g. XSS, SQLi): ");
+        String vuln = scanner.nextLine();
+        newChall = new WebExChallenge(challId, title, desc, 500, flag, webTest, vuln);
+        System.out.println("==========================================================");
+        break;
+```
+
+For WebEx following the diagram the program ask for the vuln type!
+
+```java
+    case 2:
+        System.out.println("==========================================================");
+        System.out.print("> Enter Target Subject: ");
+        String subject = scanner.nextLine();
+        System.out.print("> Enter Starting Asset: ");
+        String asset = scanner.nextLine();
+        newChall = new OsintChallenge(challId, title, desc, 500, flag, webTest, subject, asset);
+        System.out.println("==========================================================");
+        break;
+```
+
+For OSINT following the diagram, the program ask for the Subject and the Starting Asset
+
+```java
+    case 3:
+        System.out.println("==========================================================");
+        System.out.print("> Enter Attachment File Name: ");
+        String file = scanner.nextLine();
+        newChall = new MiscChallenge(challId, title, desc, 500, flag, webTest, file);
+        System.out.println("==========================================================");
+        break;
+```
+
+The code above is for the class `MiscChallenge` and following the diagram it is asking for the attachment file name
+
+```java
+    case 4:
+        System.out.println("==========================================================");
+        System.out.print("> Enter Ciphertext: ");
+        String cipher = scanner.nextLine();
+        System.out.print("> Enter Host Address: ");
+        String cryptoHost = scanner.nextLine();
+        System.out.print("> Enter Port Number: ");
+        int cryptoPort = scanner.nextInt();
+        scanner.nextLine();
+        newChall = new CryptoChallenge(challId, title, desc, 500, flag, webTest, cipher, cryptoHost, cryptoPort);
+        System.out.println("==========================================================");
+        break;
+```
+
+Comparedd to other challenges, only Crypto and Pwn that can connect to a server, that is why the program is asking for an address and a port number. This is 1:1 to the diagram.
+
+```java
+    case 5:
+        System.out.println("==========================================================");
+        System.out.print("> Enter LibC Version: ");
+        String libc = scanner.nextLine();
+        System.out.print("> Enter Host Address: ");
+        String pwnHost = scanner.nextLine();
+        System.out.print("> Enter Port Number: ");
+        int pwnPort = scanner.nextInt();
+        scanner.nextLine();
+        newChall = new PwnChallenge(challId, title, desc, 500, flag, webTest, libc, pwnHost, pwnPort);
+        System.out.println("==========================================================");
+        break;
+```
+
+The cpde above is for the class `PwnChallenge`, it's also asking for a Host Address and port number!
+
+```java
+    case 6:
+        System.out.println("==========================================================");
+        System.out.print("> Enter Target Architecture: ");
+        String arch = scanner.nextLine();
+        newChall = new RevEngChallenge(challId, title, desc, 500, flag, webTest, arch);
+        System.out.println("==========================================================");
+        break;
+```
+
+Meanwhile for the class `RevEngChallenge` it only ask for the Target Architecture, this is also following the diagram.
+
+```java
+    case 7:
+        System.out.println("==========================================================");
+        System.out.print("> Enter Target MD5 Hash: ");
+        String md5 = scanner.nextLine();
+        newChall = new ForensicChallenge(challId, title, desc, 500, flag, webTest, md5);
+        System.out.println("==========================================================");
+        break;
+```
+
+Meanwhile this section is for the class `ForensicChallenge` where their unique attribute is `md5Hash`.
+
+```java
+    default:
+        System.out.println("==========================================================");
+        System.out.println(" > Invalid type entered");
+        System.out.println("==========================================================");
+        break;
+}
+```
+
+This is the default case of the switch case!
+
+```java
+if (newChall != null) {
+    testAdmin.createChallenge(newChall);
+    challengeList.add(newChall);
+    System.out.println("> Challenge Added Successfully! ID: " + challId);
+}
+System.out.print("> Add another challenge? (y/n): ");
+String response = scanner.nextLine();
+if (!response.equalsIgnoreCase("y")) {
+    addingChallenges = false;
+}
+}
+	break;
+```
+
+After succesfully creating the program, it'll ask if it wants to create another challenge. If n was inputted the program will set the value of addingChallenges to false which inturn stop the loop of the challenge creation menu!
+
+```java
+    case 2:
+        System.out.println("==========================================================");
+        System.out.println("> Player list:");
+        for (Player p : playerList) {
+            System.out.println("> Username: " + p.getUsername() + " | Points: " + p.getTotalPoints());
+        }
+        System.out.println("==========================================================");
+        break;
+```
+Now for case 2 of the Admin panel menu, it's purpose is to show all of the players registered in the program. But because registration is not yet implemented it'll only show the dummy acoount that have been created!
+
+How it shows the player list is by using a for loop and looping how many players are in the variable / list `playerList`
+```java
+    case 3:
+        System.out.println("==========================================================");
+        System.out.println("> CTF LEADERBOARD");
+        mainLeaderboard.sortPlayerLeaderboard(); // sort the leaderboard :3
+        for (Player p : playerList) { 
+            System.out.println("> " + p.getUsername() + " : " + p.getTotalPoints() + " pts");
+        }
+        System.out.println("==========================================================");
+        break;
+```
+Case 3 is where the player leaderboard are located! For now i only implemented a player leaderboard and not a team leaderboard, because im running out of time! As you can see
+
+The program calls
+``` java
+mainLeaderboard.sortPlayerLeaderboard();
+```
+
+to sort the leaderboard in a descending order!
+
+```java
+    case 0:
+        System.out.println("> Logging out...");
+        inAdminPanel = false;
+        break;
+```
+
+And following the main menu theme where 0 is use to go back to the last menu, i set the value for the variabel of `inAdminPanel` to false, in order to end the menu loop!
+
+```java
+    default:
+        System.out.println("> Invalid option.");
+}
+}
+}
+```
+
+And because switch cases needs to have a default case when the input value is not 1-3 nor 0 i decided to put a simple println
+
+```java
+else if (loginChoice == 2) { 
+    boolean inPlayerPanel = true;
+    Player activePlayer = testPlayer;
+```
+
+Before that i set the current active player as the dummy account that i've made before, in a real CTF Platform the newly registered account will be the active player.
+
+```java
+    while (inPlayerPanel) {
+        System.out.println("==========================================================");
+        System.out.println(" > Welcome " + activePlayer.getUsername() + " !");
+        System.out.println("> [1] View active challenges");
+        System.out.println("> [2] Submit a flag to a challenge");
+        System.out.println("> [3] View my profile and points");
+        System.out.println("> [0] Back");
+        System.out.println("==========================================================");
+        System.out.print("> ");
+        int playerChoice = scanner.nextInt();
+        scanner.nextLine();
+```
+
+This is the main menu for the Player Panel! As a player youll only be able to view and solve a challenge and ofcourse to see you stats! 
+
+```java
+    switch (playerChoice) {
+        case 1:
+            System.out.println("==========================================================");
+            System.out.println("> Active Challenges");
+            if (challengeList.isEmpty()) {
+                System.out.println("> No challenges available yet.");
+            } else {
+                for (Challenge c : challengeList) {
+                    System.out.println("> [" + c.getChallengeId() + "] " + c.getTitle() + " (" + c.getMaxPoints() + " points)");
+                }
+            }
+            System.out.println("==========================================================");
+            break;
+```
+
+For case 1 the player can see all of the challenge that is available, at the moment it only shows the Id, name / title of the challenge, and how many points it'll give if solved!!
+
+```java
+        case 2:
+            if (challengeList.isEmpty()) {
+                System.out.println("==========================================================");
+                System.out.println("> No challenges!");
+                System.out.println("==========================================================");
+                break;
+            }
+            System.out.println("==========================================================");
+            System.out.print("> Enter the Challenge ID: ");
+            String targetId = scanner.nextLine();
+            Challenge selectedChall = null;
+            for (Challenge c : challengeList) {
+                if (c.getChallengeId().equalsIgnoreCase(targetId)) {
+                    selectedChall = c;
+                    break;
+                }
+            }
+            if (selectedChall != null) {
+                System.out.print("> Enter your Flag answer for '" + selectedChall.getTitle() + "': ");
+                String submittedFlag = scanner.nextLine();
+                Submission sub = new Submission("S-" + System.currentTimeMillis(), submittedFlag, activePlayer, null, selectedChall);
+                if (sub.isCorrect()) {
+                    System.out.println("> CORRECT! You earned " + selectedChall.calculatePoints() + " points.");
+                } else {
+                    System.out.println("> WRONG FLAG!");
+                }
+            } else {
+                System.out.println("> Invalid challenge ID.");
+            }
+            System.out.println("==========================================================");
+            break;
+```
+
+The code above is the logic for flag checking! first the user needs to input the challengeId which can be seen in case 1!!! After that the program will check one by one in the challenge list (linearly) if it is the correct challenge.
+
+In the code i've accounted for case sensitivity! If you type for example `c1` it'll automatically assume that you're searching for C1 because of this part `.equalsIgnoreCase` in the code.
+
+If it didn't manage to find it then it'll go to this part of the code:
+```java
+else {
+	System.out.println("> Invalid challenge ID.");
+}
+```
+
+Once found and the selectedChall doesn't equal to null then it'll ask for the flag that is correct. It'll then log when it is sumitted thru this code:
+
+```java 
+Submission sub = new Submission("S-" + System.currentTimeMillis()
+```
+
+if sub is correct then it'll go to this part of the code:
+
+```java
+if (sub.isCorrect()) {
+    System.out.println("> CORRECT! You earned " + selectedChall.calculatePoints() + " points.");
+}
+```
+
+If not then it'll go into this part:
+
+```java
+else {
+	System.out.println("> WRONG FLAG!");
+}
+```
+
+Now after case 2 of course there'll be case 3!!!
+
+```java
+        case 3:
+            System.out.println("==========================================================");
+            System.out.println("> My Profile");
+            System.out.println("> Username: " + activePlayer.getUsername());
+            System.out.println("> Email: " + activePlayer.getEmail());
+            System.out.println("> Total Points: " + activePlayer.getTotalPoints());
+            System.out.println("==========================================================");
+            break;
+```
+
+This is just a simple section where the player can easily look up the player username, email, and total points using the getter method that we've made for the class `Player`!
+
+```java
+        case 0:
+            System.out.println("> Logging out...");
+            inPlayerPanel = false;
+            break;
+```
+
+Similar to other part of the menu, case 0 will always lead to the end for the menu loop! Which in this case for the Player panel menu!!]
+
+```java
+        default:
+            System.out.println("> Invalid option.");
+    }
+```
+
+This part is the default case for the Player Panel Menu switch case!! it'll appeared when the player inputs any number beside 1-3 or 0!
+
+```java
+}
+} else {
+    System.out.println("Invalid option. Please type 1, 2, or 3.");
+}
+}
+
+scanner.close();
+}
+
+}
+```
+
+Now after all of that we close the scanner that is use to take our input so that there won't be any memory leaks :D
+
 #### User
+
+Now based on the diagram we'll need to have the class called User! It'll be the parent class for `Player` and `Admin` Interestingly based on the diagram i was told to make all of this!
 
 ```java
 class User {
@@ -333,6 +594,15 @@ class User {
     private String username;
     private String email;
     private LocalDateTime createdAt;
+```
+
+First the diagram have specified that it'll have these private atribute, thos atribute are:
+UserId, username, email, and also a LocalDateTime variable called createdAt! 
+
+![[User.png]]
+
+Below are the getter setter that was in the diagram! And base on the symbol (+) all of it must be public!
+```java
 // basic parameterised constructor!!!
     public User(String userId, String username, String email) {
         this.userId = userId;
@@ -370,6 +640,11 @@ class User {
 
 #### Player
 
+Following the diagram this class will be inheriting from `User`. This can be seen from the diagram as shown:
+![[User_Player.png]]
+
+Oh and also we can see that based on that symbol (-) this class will have 2 new private attribute!
+
 ```java
 class Player extends User {
 // 2 new attributes for player!!
@@ -382,7 +657,10 @@ class Player extends User {
         this.playerRank = 0;
         this.totalPoints = 0;
     }
+```
+Moving on to the methods for this class!
 
+```java
 // getter and setter for this class too ofcourse :3
     public int getPlayerRank() {
         return playerRank;
@@ -410,6 +688,12 @@ class Player extends User {
 
 #### Admin
 
+Similar to `Player` this class will be inheriting from the class `User`. This can be seen in the diagram below:
+
+![[Pasted image 20260325151120.png]]
+
+As seen aboved the class admin extends from user!!! Also it has two new private variabel !! Let's implement them!
+
 ```java
 class Admin extends User {
 // 2 new attributes for admin based on the diagramm...!!!
@@ -420,7 +704,10 @@ class Admin extends User {
         super(userId, username, email);
         this.adminLevel = adminLevel;
         this.permissions = new ArrayList<>();
-    
+```
+As shown, there's a list called `permissions`!!!
+
+```Java
         // placeholder or default prem
     switch (adminLevel) {
         case 0:
@@ -438,7 +725,13 @@ class Admin extends User {
             break;
     }
     }
+```
+Now i need to be honest here i don't know what is the function of admin level, so i ended u[] interpreting it as cases where the admin / CTF organizers sometime need to have the prob setter (the people that makes the challenges) to have access to update their own challenge!
 
+Here i made a simple switch case where 0 is the highest priority capable of doing everything and level 1 is where the prob setter can have the permission to create challenge and edit their challenge. 
+
+Sadly because of time i ended up scraping this ;-;
+```java
     public int getAdminLevel() {
         return adminLevel;
     }
@@ -463,7 +756,11 @@ class Admin extends User {
 }
 ```
 
+Now i also try to guess how a function called createChallenge work !!
+
 #### Team
+
+
 
 ```java
 class Team {
@@ -968,7 +1265,7 @@ class Submission {
     private boolean isCorrect;
     private Player player; private Team team;
     private Challenge challenge;
-    
+
     public Submission(String submissionId, String submissionFlag, Player player, Team team, Challenge challenge) {
         this.submissionId = submissionId;
         this.submissionTime = LocalDateTime.now();
@@ -980,12 +1277,12 @@ class Submission {
     // logic for flag submission checker
     if (this.isCorrect) {
             int pointsEarned = challenge.calculatePoints();
-            
+
             // increase player points
             if (this.player != null) {
                 this.player.addPoints(pointsEarned);
             }
-            
+
             // increase team points
             if (this.team != null) {
                 this.team.setTeamScore(this.team.getTeamScore() + pointsEarned);
@@ -1044,3 +1341,6 @@ class Submission {
 ### Individuality
 
 Lately i've been pretty obsessed with CTF, and i'll be suprised if there's someone that'll make a CTF Platform. If that were to happened i'll be sure that they won't seperate OSINT (Which is usually grouped into misc) into it's own class!
+
+> [!NOTE] Title
+> Contents
