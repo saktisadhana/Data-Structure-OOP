@@ -1,4 +1,35 @@
 # Report Assignment 2
+
+## Table of Contents
+
+- [Report Assignment 2](#report-assignment-2)
+- [Identity](#identity)
+- [Reporting](#reporting)
+  - [Case Description](#case-description)
+  - [Class Diagram](#class-diagram)
+  - [Java Code](#java-code)
+    - [App](#app)
+    - [User](#user)
+    - [Player](#player)
+    - [Admin](#admin)
+    - [Team](#team)
+    - [Leaderboard](#leaderboard)
+    - [Challenge](#challenge)
+    - [Attachment](#attachment)
+    - [ZipAttachment](#zipattachment)
+    - [FileAttachment](#fileattachment)
+    - [WebsiteLinkAttachment](#websitelinkattachment)
+    - [Connection](#connection)
+    - [WebExChallenge](#webexchallenge)
+    - [OsintChallenge](#osintchallenge)
+    - [MiscChallenge](#miscchallenge)
+    - [CryptoChallenge](#cryptochallenge)
+    - [PwnChallenge](#pwnchallenge)
+    - [RevEngChallenge](#revengchallenge)
+    - [ForensicChallenge](#forensicchallenge)
+    - [Submission](#submission)
+  - [Output](#output)
+  - [Individuality](#individuality)
 ## Identity
 
 
@@ -14,7 +45,7 @@ I was tasked to find a case or a problem around me that can be solved using the 
 
 ### Class Diagram
 
-![Class Diagram_Assignment-2](ADiagram_Assignment-2.svg)
+![Class Diagram](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/ADiagram_Assignment-2.svg)
 
 Based on the instruction given, the diagram above was made using `Mermaid.AI` which i must admit is a pretty powerful AI that is capable of making any diagram based on the prompt that is given!
 
@@ -601,7 +632,7 @@ class User {
 First the diagram have specified that it'll have these private atribute, thos atribute are:
 UserId, username, email, and also a LocalDateTime variable called createdAt! 
 
-![[User.png]]
+![User Class Diagram](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/User.png)
 
 Below are the getter setter that was in the diagram! And base on the symbol (+) all of it must be public!
 ```java
@@ -643,7 +674,7 @@ Below are the getter setter that was in the diagram! And base on the symbol (+) 
 #### Player
 
 Following the diagram this class will be inheriting from `User`. This can be seen from the diagram as shown:
-![[User_Player.png]]
+![User and Player Class Diagram](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/User_Player.png)
 
 Oh and also we can see that based on that symbol (-) this class will have 2 new private attribute!
 
@@ -692,7 +723,7 @@ Moving on to the methods for this class!
 
 Similar to `Player` this class will be inheriting from the class `User`. This can be seen in the diagram below:
 
-![[Pasted image 20260325151120.png]]
+![Admin Class Diagram](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325151120.png)
 
 As seen aboved the class admin extends from user!!! Also it has two new private variabel !! Let's implement them!
 
@@ -1337,25 +1368,63 @@ class Submission {
 ```
 
 ### Output
-1. Main Menu ![[Pasted image 20260325153716.png]]
-2. Admin Panel ![[Pasted image 20260325153742.png]]
-3. Create a new challenge ![[Pasted image 20260325153833.png]]
-4. Create another Challenge with a different category (Pwn)![[Pasted image 20260325154002.png]]
-5.  Creating an Osint Chall ![[Pasted image 20260325154146.png]]
-6. Creating an Misc Chall![[Pasted image 20260325154220.png]]
-7. Creating an Crypto Chall ![[Pasted image 20260325154306.png]]
-8. Creating an Reveng Chall ![[Pasted image 20260325154340.png]]
-9. Creating an Forens Chall ![[Pasted image 20260325154421.png]]
-10. View all players ![[Pasted image 20260325154503.png]]
-11. View Leaderboard![[Pasted image 20260325154520.png]]
-12. Back from admin panel ![[Pasted image 20260325154550.png]]
-13. Logging into player![[Pasted image 20260325154609.png]]
-14. View active challenge![[Pasted image 20260325154652.png]]
-15. View active challenge, when there is none![[Pasted image 20260325154804.png]]
-16. Submitting correct flag ![[Pasted image 20260325154853.png]]
-17. Submitting wrong flag ![[Pasted image 20260325154924.png]]
-18. View stats with points![[Pasted image 20260325154946.png]]
-19. View stats with no points![[Pasted image 20260325155018.png]]
+
+**1. Main Menu**
+![Main Menu](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325153716.png)
+
+**2. Admin Panel**
+![Admin Panel](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325153742.png)
+
+**3. Create a new challenge**
+![Create a new challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325153833.png)
+
+**4. Create another Challenge with a different category (Pwn)**
+![Create Pwn Challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154002.png)
+
+**5. Creating an OSINT Chall**
+![Create OSINT Challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154146.png)
+
+**6. Creating a Misc Chall**
+![Create Misc Challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154220.png)
+
+**7. Creating a Crypto Chall**
+![Create Crypto Challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154306.png)
+
+**8. Creating a Reveng Chall**
+![Create Reveng Challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154340.png)
+
+**9. Creating a Forens Chall**
+![Create Forens Challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154421.png)
+
+**10. View all players**
+![View all players](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154503.png)
+
+**11. View Leaderboard**
+![View Leaderboard](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154520.png)
+
+**12. Back from admin panel**
+![Back from admin panel](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154550.png)
+
+**13. Logging into player**
+![Logging into player](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154609.png)
+
+**14. View active challenge**
+![View active challenge](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154652.png)
+
+**15. View active challenge, when there is none**
+![View active challenge empty](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154804.png)
+
+**16. Submitting correct flag**
+![Submitting correct flag](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154853.png)
+
+**17. Submitting wrong flag**
+![Submitting wrong flag](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154924.png)
+
+**18. View stats with points**
+![View stats with points](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325154946.png)
+
+**19. View stats with no points**
+![View stats with no points](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260325155018.png)
 
 ### Individuality
 
