@@ -1,16 +1,11 @@
 # Report Assignment 2
 ## Identity
 
-<<<<<<< HEAD
+
 | Nama                     | NRP        | Class   |
 | ------------------------ | ---------- | ------- |
 | Putu Putra Sakti Sadhana | 5027251101 | Class A |
-=======
-| Nama                     | NRP        | Class |
-| ------------------------ | ---------- | ------------ |
-| Putu Putra Sakti Sadhana | 5027251101 | Class A         |
 
->>>>>>> fefa5590cfc726f8d62cafab8458befa9cf421ee
 ## Reporting
 
 ### Case Description
