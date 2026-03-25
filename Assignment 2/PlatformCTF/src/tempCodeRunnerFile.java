@@ -1,0 +1,1 @@
+// 2 new attributes for admin based on the diagramm...!!!

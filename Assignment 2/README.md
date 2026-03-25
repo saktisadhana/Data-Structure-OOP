@@ -762,8 +762,6 @@ Now i also try to guess how a function called createChallenge work !!
 
 #### Team
 
-
-
 ```java
 class Team {
 // a brand new class, the attribute are following the diagrams!! :D
@@ -1339,13 +1337,27 @@ class Submission {
 ```
 
 ### Output
+1. Main Menu ![[Pasted image 20260325153716.png]]
+2. Admin Panel ![[Pasted image 20260325153742.png]]
+3. Create a new challenge ![[Pasted image 20260325153833.png]]
+4. Create another Challenge with a different category (Pwn)![[Pasted image 20260325154002.png]]
+5.  Creating an Osint Chall ![[Pasted image 20260325154146.png]]
+6. Creating an Misc Chall![[Pasted image 20260325154220.png]]
+7. Creating an Crypto Chall ![[Pasted image 20260325154306.png]]
+8. Creating an Reveng Chall ![[Pasted image 20260325154340.png]]
+9. Creating an Forens Chall ![[Pasted image 20260325154421.png]]
+10. View all players ![[Pasted image 20260325154503.png]]
+11. View Leaderboard![[Pasted image 20260325154520.png]]
+12. Back from admin panel ![[Pasted image 20260325154550.png]]
+13. Logging into player![[Pasted image 20260325154609.png]]
+14. View active challenge![[Pasted image 20260325154652.png]]
+15. View active challenge, when there is none![[Pasted image 20260325154804.png]]
+16. Submitting correct flag ![[Pasted image 20260325154853.png]]
+17. Submitting wrong flag ![[Pasted image 20260325154924.png]]
+18. View stats with points![[Pasted image 20260325154946.png]]
+19. View stats with no points![[Pasted image 20260325155018.png]]
 
 ### Individuality
 
 Lately i've been pretty obsessed with CTF, and i'll be suprised if there's someone that'll make a CTF Platform. If that were to happened i'll be sure that they won't seperate OSINT (Which is usually grouped into misc) into it's own class!
-<<<<<<< HEAD
 
-> [!NOTE] Title
-> Contents
-=======
->>>>>>> fefa5590cfc726f8d62cafab8458befa9cf421ee
