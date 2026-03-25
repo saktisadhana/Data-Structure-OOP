@@ -1,9 +1,16 @@
 # Report Assignment 2
 ## Identity
 
+<<<<<<< HEAD
 | Nama                     | NRP        | Class   |
 | ------------------------ | ---------- | ------- |
 | Putu Putra Sakti Sadhana | 5027251101 | Class A |
+=======
+| Nama                     | NRP        | Class |
+| ------------------------ | ---------- | ------------ |
+| Putu Putra Sakti Sadhana | 5027251101 | Class A         |
+
+>>>>>>> fefa5590cfc726f8d62cafab8458befa9cf421ee
 ## Reporting
 
 ### Case Description
@@ -12,7 +19,7 @@ I was tasked to find a case or a problem around me that can be solved using the 
 
 ### Class Diagram
 
-![[Class Diagram_Assignment-2.svg]]
+![Class Diagram_Assignment-2](ADiagram_Assignment-2.svg)
 
 Based on the instruction given, the diagram above was made using `Mermaid.AI` which i must admit is a pretty powerful AI that is capable of making any diagram based on the prompt that is given!
 
@@ -1341,6 +1348,9 @@ class Submission {
 ### Individuality
 
 Lately i've been pretty obsessed with CTF, and i'll be suprised if there's someone that'll make a CTF Platform. If that were to happened i'll be sure that they won't seperate OSINT (Which is usually grouped into misc) into it's own class!
+<<<<<<< HEAD
 
 > [!NOTE] Title
 > Contents
+=======
+>>>>>>> fefa5590cfc726f8d62cafab8458befa9cf421ee
