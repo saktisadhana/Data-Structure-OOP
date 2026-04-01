@@ -45,7 +45,7 @@ I was tasked to find a case or a problem around me that can be solved using the 
 
 ### Class Diagram
 
-![Class Diagram|697](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/ADiagram_Assignment-2.svg)
+![Class Diagram](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/ADiagram_Assignment-2.svg)
 
 Based on the instruction given, the diagram above was made using `Mermaid.AI` which i must admit is a pretty powerful AI that is capable of making any diagram based on the prompt that is given!
 
@@ -1414,7 +1414,7 @@ abstract class Challenge {
 
 This is because in the diagram it specifically mentions that it is an abstract class!
 
-![[Pasted image 20260401113016.png]]
+![Pasted image 20260401113016.png](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/Pasted%20image%2020260401113016.png)
 
 The text `<<abstract>>` is considered a UML stereotype. Now besides being specifically told that it is an abstract class, it makes sense that this class will be considered as one. This is because other challenge categories wouldn't have to implement all of the complicated methods for flag checking, etc. Now this leads nicely into the next pillar of OOP which is
 
