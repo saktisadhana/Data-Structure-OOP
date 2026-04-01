@@ -8,40 +8,54 @@
 - [Report Assignment 2](#report-assignment-2)
 - [Identity](#identity)
 - [Reporting](#reporting)
-  - [Case Description](#case-description)
-  - [Class Diagram](#class-diagram)
-  - [Java Code](#java-code)
-    - [App](#app)
-    - [User](#user)
-    - [Player](#player)
-    - [Admin](#admin)
-    - [Team](#team)
-    - [Leaderboard](#leaderboard)
-    - [Challenge](#challenge)
-    - [Attachment](#attachment)
-    - [ZipAttachment](#zipattachment)
-    - [FileAttachment](#fileattachment)
-    - [WebsiteLinkAttachment](#websitelinkattachment)
-    - [Connection](#connection)
-    - [WebExChallenge](#webexchallenge)
-    - [OsintChallenge](#osintchallenge)
-    - [MiscChallenge](#miscchallenge)
-    - [CryptoChallenge](#cryptochallenge)
-    - [PwnChallenge](#pwnchallenge)
-    - [RevEngChallenge](#revengchallenge)
-    - [ForensicChallenge](#forensicchallenge)
-    - [Submission](#submission)
-  - [OOP Principles](#oop-principles)
-    - [Encapsulation](#encapsulation)
-    - [Abstraction](#abstraction)
-    - [Inheritance](#inheritance)
-      - [Abstract Class](#abstract-class)
-      - [Concrete Class](#concrete-class)
-    - [Polymorphism](#polymorphism)
-      - [Challenge](#challenge-1)
-      - [Attachment & Connection](#attachment--connection)
-  - [Output](#output)
-  - [Individuality](#individuality)
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;<i>Reporting Content</i></summary>
+&nbsp;&nbsp;- [Case Description](#case-description)<br>
+&nbsp;&nbsp;- [Class Diagram](#class-diagram)<br>
+
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;<i>Java Code</i></summary>
+&nbsp;&nbsp;&nbsp;&nbsp;- [App](#app)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [User](#user)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Player](#player)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Admin](#admin)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Team](#team)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Leaderboard](#leaderboard)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Challenge](#challenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Attachment](#attachment)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [ZipAttachment](#zipattachment)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [FileAttachment](#fileattachment)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [WebsiteLinkAttachment](#websitelinkattachment)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Connection](#connection)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [WebExChallenge](#webexchallenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [OsintChallenge](#osintchallenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [MiscChallenge](#miscchallenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [CryptoChallenge](#cryptochallenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [PwnChallenge](#pwnchallenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [RevEngChallenge](#revengchallenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [ForensicChallenge](#forensicchallenge)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Submission](#submission)<br>
+</details>
+
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;<i>OOP Principles</i></summary>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Encapsulation](#encapsulation)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- [Abstraction](#abstraction)<br>
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Inheritance</i></summary>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Abstract Class](#abstract-class)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Concrete Class](#concrete-class)<br>
+</details>
+<details>
+<summary>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Polymorphism</i></summary>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Challenge](#challenge-1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Attachment & Connection](#attachment--connection)<br>
+</details>
+</details>
+
+&nbsp;&nbsp;- [Output](#output)<br>
+&nbsp;&nbsp;- [Individuality](#individuality)<br>
+</details>
 
 </details>
 ## Identity
