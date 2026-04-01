@@ -45,7 +45,7 @@ I was tasked to find a case or a problem around me that can be solved using the 
 
 ### Class Diagram
 
-![Class Diagram](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/ADiagram_Assignment-2.svg)
+![Class Diagram|697](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/ADiagram_Assignment-2.svg)
 
 Based on the instruction given, the diagram above was made using `Mermaid.AI` which i must admit is a pretty powerful AI that is capable of making any diagram based on the prompt that is given!
 
@@ -759,7 +759,7 @@ As shown, there's a list called `permissions`!!!
     }
     }
 ```
-Now i need to be honest here i don't know what is the function of admin level, so i ended u[] interpreting it as cases where the admin / CTF organizers sometime need to have the prob setter (the people that makes the challenges) to have access to update their own challenge!
+Now i need to be honest here i don't know what is the function of admin level, so i ended up interpreting it where the admin / CTF organizers sometimes need to have the problem setter (the people that makes the challenges) have access to update their own challenge!
 
 Here i made a simple switch case where 0 is the highest priority capable of doing everything and level 1 is where the prob setter can have the permission to create challenge and edit their challenge. 
 
@@ -789,7 +789,6 @@ Sadly because of time i ended up scraping this ;-;
 }
 ```
 
-Now i also try to guess how a function called createChallenge work !!
 
 #### Team
 
@@ -1364,6 +1363,137 @@ class Submission {
         this.challenge = challenge;
     }
 
+}
+```
+
+### OOP Principles
+
+In this section i'll be explaining all of the OOP Principles that are used in the program! But before that... Lets start with four main pillars of OOP!!
+
+#### Encapsulation
+
+Encapsulation is a practice where each class has a method to use a specific private variable that it has, while all of the classes in the program uses this principle, i'll use the class `Submission` as an example
+
+```java
+class Submission {
+    private String submissionId;
+    private LocalDateTime submissionTime;
+    private String submissionFlag;
+    private boolean isCorrect;
+    private Player player; private Team team;
+    private Challenge challenge;
+```
+
+As you can see the class has a couple of private variable, if the program suddenly needs to know if wether or not a `Player` submitted the correct flag, it'll need a way to get the value / string of the correct flag. To solve that issue we can easily create a getter setter for that private variable, and this is indicated in the diagram too!
+
+```java
+public String getSubmissionFlag() {
+        return submissionFlag;
+    }
+```
+
+First we need a method for the flag that is submitter by the `Player`
+
+```java
+public boolean isCorrect() {
+        return isCorrect;
+    }
+```
+
+Then we create another method to check if it is the correct one! This is one of many examples on how the program uses encapsulation!
+
+#### Abstraction
+
+Now for the next principle we have Abstraction. The concept of this is having a class that is only showing the essential features of an object. For this program there is only one abstract class which is!
+
+```java
+abstract class Challenge {
+...
+}
+```
+
+This is because in the diagram it specifically mentions that it is an abstract class!
+
+![[Pasted image 20260401113016.png]]
+
+The text `<<abstract>>` is considered a UML stereotype. Now besides being specifically told that it is an abstract class, it makes sense that this class will be considered as one. This is because other challenge categories wouldn't have to implement all of the complicated methods for flag checking, etc. Now this leads nicely into the next pillar of OOP which is
+
+#### Inheritance
+
+Inheritance is a principle where a class can inherit another class's variables and methods. The class that is inheriting is called a child class, whilst the class that gets inherited is called a parent class. In the world of OOP, there are two types of parent class which are:
+
+##### Abstract Class
+
+Besides the function that has been mentioned, having an abstract class as a parent class has its benefits, which are:
+
+1. The inability to create an object from an abstract class
+
+	An example that i can give to explain this benefit is to imagine the class `Challenge` as a concrete class. A code like this can be use to create a new challenge.
+	
+	```java
+	Challenge myChallenge = new Challenge();
+	```
+
+	By doing this you won't be able to know what the category of the challenge and all of the necessary attachment that is needed for it.
+
+2. The ability to create an abstract method
+
+	An abstract method is a method where you can have a function that can be tailored suited for its own child. This can be seen in the `Challenge` class.
+	
+	```java
+	public abstract boolean verifyFlag(String submittedFlag);
+	```
+
+	Each challenge will have its own flag, that's why we need to make this as an abstract class!
+
+##### Concrete Class
+
+Now for a concrete class, it's basically the exact opposite of a abstract class. In the program class `User` is considered as a concrete one! An this can also be seen from the diagram
+
+![User Class Diagram](https://raw.githubusercontent.com/saktisadhana/Data-Structure-OOP/main/Assignment%202/Assets/User.png)
+
+As you can see compared to the other class, the diagram doesn't mention that it is an abstract class.
+
+#### Polymorphism
+
+And then we have Polymorphism. This is the principle that allows different child classes to share the same method name as their parent, but execute their own entirely different, specific code when that method is actually called.
+
+This principle is mainly use in the child class for the parent class `Challenge` and also in the child class for that implements a interface such as `Attachment` and `Connection`.
+
+##### Challenge
+
+For this case @Override is mentioned in all of the challenge category, this is because an abstract class must be implemented by it's own child class.
+
+```java
+public boolean verifyFlag(String submittedFlag) {
+        return this.getFlag().equals(submittedFlag);
+    }
+```
+
+##### Attachment & Connection
+
+Similar to the class `Challenge` @Override is mentioned in all of the challenge category, this is because a class that implements a interface must Override (Implements) the abstract methods defined in that interface.
+
+-  Attachment
+
+```java
+interface Attachment {
+    void download(); // To indicate that the attachment are being used
+}
+```
+
+In the code that interface is being implemented like this:
+
+```java
+class ZipAttachment implements Attachment {
+    private String ZipLink;
+    public ZipAttachment(String ZipLink) {
+        this.ZipLink = ZipLink;
+    }
+    @Override
+    public void download() {
+        System.out.println("Downloading " + ZipLink);
+    }
 }
 ```
 

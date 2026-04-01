@@ -13,6 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "513340510a36fff6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Assignment 2/README.md",
                 "mode": "source",
                 "source": false
@@ -21,7 +35,8 @@
               "title": "README"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Assignment 2/README.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Assignment 2/README.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -156,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Assignment 2/README.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -183,19 +198,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "b9df2488e9453a13",
+  "active": "513340510a36fff6",
   "lastOpenFiles": [
+    "README.md",
+    "Assignment 2/README.md",
+    "Assignment 2/Assets/Pasted image 20260401113016.png",
+    "Assignment 2/Assets/User_Player.png",
+    "Assignment 2/Assets/User.png",
+    "Assignment 2/Assets/Pasted image 20260325154340.png",
+    "Assignment 2/Assets/Pasted image 20260325154550.png",
+    "Assignment 2/Assets/Pasted image 20260325154924.png",
+    "Assignment 2/Assets/ADiagram_Assignment-2.svg",
     "Assignment 2/Assets/Pasted image 20260325155018.png",
     "Assignment 2/Assets/Pasted image 20260325154946.png",
-    "Assignment 2/Assets/Pasted image 20260325154924.png",
     "Assignment 2/Assets/Pasted image 20260325154853.png",
-    "Assignment 2/Assets/Pasted image 20260325154804.png",
-    "Assignment 2/Assets/Pasted image 20260325154652.png",
-    "Assignment 2/Assets/Pasted image 20260325154609.png",
-    "Assignment 2/Assets/Pasted image 20260325154550.png",
-    "Assignment 2/Assets/Pasted image 20260325154520.png",
-    "Assignment 2/Assets/Pasted image 20260325154503.png",
-    "Assignment 2/Assets/Pasted image 20260325154421.png",
     "Assignment 2/PlatformCTF/bin/ZipAttachment.class",
     "Assignment 2/PlatformCTF/bin/User.class",
     "Assignment 2/PlatformCTF/bin/WebsiteLinkAttachment.class",
@@ -206,8 +222,6 @@
     "Assignment 2/PlatformCTF/bin/PwnChallenge.class",
     "Assignment 2/PlatformCTF/bin/Player.class",
     "Assignment 2/PlatformCTF/bin/Leaderboard.class",
-    "README.md",
-    "Assignment 2/README.md",
     "Assignment 2/PlatformCTF/README.md",
     "Assignment 1/README.md",
     "Assignment 2/README.md.md"
