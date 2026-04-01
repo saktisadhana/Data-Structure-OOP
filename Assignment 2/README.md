@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+<details>
+<summary><b>Click to expand Table of Contents</b></summary>
+
 - [Report Assignment 2](#report-assignment-2)
 - [Identity](#identity)
 - [Reporting](#reporting)
@@ -28,8 +31,19 @@
     - [RevEngChallenge](#revengchallenge)
     - [ForensicChallenge](#forensicchallenge)
     - [Submission](#submission)
+  - [OOP Principles](#oop-principles)
+    - [Encapsulation](#encapsulation)
+    - [Abstraction](#abstraction)
+    - [Inheritance](#inheritance)
+      - [Abstract Class](#abstract-class)
+      - [Concrete Class](#concrete-class)
+    - [Polymorphism](#polymorphism)
+      - [Challenge](#challenge-1)
+      - [Attachment & Connection](#attachment--connection)
   - [Output](#output)
   - [Individuality](#individuality)
+
+</details>
 ## Identity
 
 
